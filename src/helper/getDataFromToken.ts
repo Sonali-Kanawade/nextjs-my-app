@@ -7,7 +7,7 @@ export async function  getDataFromToken(request: NextRequest) {
     
         const decoedToken = await jwt.verify(token, 'mynexttoken');
         return decoedToken.id;
-    } catch (error: any) {
+    } catch (error: any) {        
         throw new Error(error.message);
     }
 }

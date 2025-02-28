@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const router = useRouter();
 
   const [userData, setUserData] = useState({});
-
+          
   const getUserDetails = async () => {
     const response = await axios.get("/api/users/userDetail");
     console.log(response.data.data);
