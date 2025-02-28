@@ -5,10 +5,15 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+interface User{
+  username: string;
+  email: string;
+}
+
 const ProfilePage = () => {
   const router = useRouter();
 
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState<User>({} as User);
           
   const getUserDetails = async () => {
     const response = await axios.get("/api/users/userDetail");
